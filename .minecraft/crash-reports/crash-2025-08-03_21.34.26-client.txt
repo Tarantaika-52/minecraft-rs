@@ -1,0 +1,86 @@
+---- Minecraft Crash Report ----
+// Don't be sad, have a hug! <3
+
+Time: 2025-08-03 21:34:26
+Description: Initializing game
+
+java.lang.ExceptionInInitializerError
+	at enr.<init>(SourceFile:873)
+	at enn.<init>(SourceFile:460)
+	at net.minecraft.client.main.Main.main(SourceFile:211)
+Caused by: java.lang.RuntimeException: java.lang.UnsatisfiedLinkError: Failed to locate library: libglfw.dylib
+	at ehe.<clinit>(SourceFile:45)
+	... 3 more
+Caused by: java.lang.UnsatisfiedLinkError: Failed to locate library: libglfw.dylib
+	at org.lwjgl.system.Library.loadNative(Library.java:327)
+	at org.lwjgl.system.Library.loadNative(Library.java:224)
+	at org.lwjgl.glfw.GLFW.<clinit>(GLFW.java:30)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1155)
+	at java.base/java.lang.invoke.DirectMethodHandle$EnsureInitialized.computeValue(DirectMethodHandle.java:377)
+	at java.base/java.lang.invoke.DirectMethodHandle$EnsureInitialized.computeValue(DirectMethodHandle.java:374)
+	at java.base/java.lang.ClassValue.getFromHashMap(ClassValue.java:228)
+	at java.base/java.lang.ClassValue.getFromBackup(ClassValue.java:210)
+	at java.base/java.lang.ClassValue.get(ClassValue.java:116)
+	at java.base/java.lang.invoke.DirectMethodHandle.checkInitialized(DirectMethodHandle.java:400)
+	at java.base/java.lang.invoke.DirectMethodHandle.ensureInitialized(DirectMethodHandle.java:388)
+	at java.base/java.lang.invoke.DirectMethodHandle.ensureInitialized(DirectMethodHandle.java:422)
+	at ehe.<clinit>(SourceFile:42)
+	... 3 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at enr.<init>(SourceFile:873)
+	at enn.<init>(SourceFile:460)
+
+-- Initialization --
+Details:
+	Modules: 
+Stacktrace:
+	at net.minecraft.client.main.Main.main(SourceFile:211)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Mac OS X (aarch64) version 15.6
+	Java Version: 17.0.15, Microsoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Microsoft
+	Memory: 98580992 bytes (94 MiB) / 263192576 bytes (251 MiB) up to 1073741824 bytes (1024 MiB)
+	CPUs: 10
+	Processor Vendor: Apple Inc.
+	Processor Name: Apple M4
+	Identifier: Apple Inc. Family 0x6f5129ac Model 0 Stepping 0
+	Microarchitecture: unknown
+	Frequency (GHz): -0.00
+	Number of physical packages: 1
+	Number of physical CPUs: 10
+	Number of logical CPUs: 10
+	Graphics card #0 name: Apple M4
+	Graphics card #0 vendor: Apple (0x106b)
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Memory slot #0 capacity (MB): 0.00
+	Memory slot #0 clockSpeed (GHz): 0.00
+	Memory slot #0 type: unknown
+	Virtual memory max (MB): 16384.00
+	Virtual memory used (MB): 12344.42
+	Swap memory total (MB): 0.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 1 total; -Xmx1G
+	Launched Version: 1.20.1
+	Backend library: LWJGL version 3.3.1 build 7
+	Backend API: Unknown
+	Window size: <not initialized>
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: <disabled>
+	Using VBOs: Yes
+	Is Modded: Probably not. Client jar signature and brand is untouched
+	Type: Client (map_client.txt)
+	CPU: <unknown>

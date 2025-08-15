@@ -1,0 +1,27 @@
+[package]
+name = "minecraft-rs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# HTTP lib
+reqwest = "0.12"
+
+# Async
+tokio = { version = "1", features = ["full"] }
+tokio-util = {version = "0.7.15", features = ["full"]}
+futures = "0.3.31"
+
+# Json parser
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+
+# Zip 
+zip = "4.3.0"
+
+# Derive more :3
+derive_more = {version = "2.0.1", features = ["from", "display"]}
+
+# Logging
+log = "0.4"
+env_logger = "0.11.8"
