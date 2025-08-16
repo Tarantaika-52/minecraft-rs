@@ -40,7 +40,7 @@ fn get_libs(info: &VersionJson, minecraft_dir: &Path) -> Result<String, Error> {
     }
 
     libs.push(PathBuf::from(
-        "/Users/user/Desktop/projects/minecraft-rs/.minecraft/versions/1.20.1/1.20.1.jar",
+        ".minecraft/versions/1.21.8/1.21.8.jar",
     ));
 
     let join_char = get_join_char();
@@ -57,40 +57,40 @@ pub fn get_command(launcher: &Launcher, info: &VersionJson) -> Result<(), Error>
     let libs = get_libs(info, &launcher.path);
 
     let mut binding = Command::new(
-        ".minecraft/runtime/java-runtime-gamma/mac-os-arm64/java-runtime-gamma/jre.bundle/Contents/Home/bin/java",
+        ".minecraft/runtime/java-runtime-delta/windows-x64/java-runtime-delta/bin/java.exe",
     );
 
     // dbg!(&libs);
 
     let command = binding
         .arg("-Xmx1G")
-    		.arg("-XstartOnFirstThread")
-        .arg("-Djava.library.path=/Users/user/Desktop/projects/minecraft-rs/.minecraft/versions/1.20.1/natives")
+    		// .arg("-XstartOnFirstThread")
+        .arg("-Djava.library.path=.minecraft/versions/1.21.8/natives")
         .arg("-cp")
         .arg(libs?)
         .arg("net.minecraft.client.main.Main")
         .args([
             "--username",
-            "USER",
+            "sigma_svinka",
             "--version",
-            "1.20.1",
+            "1.21.8",
             "--gameDir",
-            "/Users/user/Desktop/projects/minecraft-rs/.minecraft",
+            ".minecraft",
             "--assetsDir",
-            "/Users/user/Desktop/projects/minecraft-rs/.minecraft/assets",
+            ".minecraft/assets",
             "--assetIndex",
-            "1.20",
+            "26",
             "--uuid",
-            "00000000-0000-0000-0000-000000000000",
+            "6a9b09bb-2299-44a3-884d-e6668c6c5031",
             "--accessToken",
-            "123456789123456789123456789",
+            "123456789123456789123456789", 
             "--userType",
             "legacy",
             "--versionType",
             "release",
         ]).envs(std::env::vars()).env(
         "DYLD_LIBRARY_PATH",
-        "/Users/user/Desktop/projects/minecraft-rs/.minecraft/versions/1.20.1/natives",
+        ".minecraft/versions/1.21.8/natives",
     );
 
     // dbg!(&command);

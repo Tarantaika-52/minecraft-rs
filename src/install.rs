@@ -100,7 +100,8 @@ pub async fn install_assets(launcher: &Launcher, info: &VersionJson) -> Result<(
             .join(&hash[..2]);
         tokio::fs::create_dir_all(&path).await?;
         let url = format!("{}/{}/{}", ASSETS_URL_ROOT, &hash[..2], &hash);
-        download_file(&url, path, &client).await?;
+        let asset_url = path.join(&hash);
+        download_file(&url, &asset_url, &client).await?;
     }
 
     Ok(())

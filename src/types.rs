@@ -32,7 +32,7 @@ pub struct Launcher {
 
 impl Launcher {
     pub fn new() -> Self {
-        let path = get_minecraft_dir();
+        let path = PathBuf::from("./");
 
         Launcher { path }
     }

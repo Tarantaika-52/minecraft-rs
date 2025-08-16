@@ -25,7 +25,7 @@ async fn main() -> Result<(), types::Error> {
     let versions = utils::get_versions_list().await?;
 
     // Получение определенной версии
-    if let Some(version) = versions.find_version("1.20.1") {
+    if let Some(version) = versions.find_version("1.21.8") {
         // Получение
         let info = version.get_info(&launcher).await?;
 
